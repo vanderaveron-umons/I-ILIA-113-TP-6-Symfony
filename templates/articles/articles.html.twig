@@ -1,17 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="articles">
-        {% for article in articles %}
-            <div class="article">
-                <h2>{{article.nom}}</h2>
-                <img src="{{article.photo}}" width="350" height="250"/>
-                <br>
-                <h4>Prix : {{article.prix}}</h4> <br><br>
-                    <a href="{{path('detailsarticle', {'id' :article.id})}}" class= "btn btn-success">Lire les détails</a>
-                    <br>
-            </div>
-        {% endfor %}
+    <div class="container py-5">
+        <h1 class="mb-4">Liste des articles</h1>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            {% for article in articles %}
+                <div class="col">
+                    <div class="card h-100">
+                        <img src="{{article.photo}}" class="card-img-top" width="350" height="250" alt="{{ article.nom }}">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ article.nom }}</h5>
+                            <p class="card-text">{{ article.prix }}</p>
+                            <a href="{{path('detailsarticle', {'id' :article.id})}}" class="btn btn-success">Lire les détails</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
     </div>
-
 {% endblock %}
+
+

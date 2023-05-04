@@ -1,13 +1,24 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="detailarticle">
-        <h1>Détails de l'article n° {{ article.id }}</h1>
-        <h2>{{article.nom}}</h2>
-        <img src="{{article.photo}}" width="350" height="250"/>
-        <br>
-        <h4>Prix : {{article.prix}}</h4> <br><br>
-        <h4>Détails : {{article.details}}</h4> <br><br>
-        <a href="{{path('deletearticle', {'id' :article.id})}}" class= "btn btn-success">Supprimer l'article</a>
+    <div class="container py-5">
+        <h1 class="mb-4">Détails de l'article n°{{ article.id }}</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <img src="{{article.photo}}" width="350" height="250" class="card-img-top" alt="{{ article.nom }}">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ article.nom }}</h5>
+                        <p class="card-text">{{ article.details }}</p>
+                        <p class="card-text"><strong>Prix:</strong> {{ article.prix }}</p>
+                        <a href="{{path('deletearticle', {'id' :article.id})}}" class= "btn btn-danger">Supprimer l'article</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}
