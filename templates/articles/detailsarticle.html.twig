@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="detailarticle">
+        <h1>Détails de l'article n° {{ article.id }}</h1>
+        <h2>{{article.nom}}</h2>
+        <img src="{{article.photo}}" width="350" height="250"/>
+        <br>
+        <h4>Prix : {{article.prix}}</h4> <br><br>
+        <h4>Détails : {{article.details}}</h4> <br><br>
+        <a href="{{path('deletearticle', {'id' :article.id})}}" class= "btn btn-success">Supprimer l'article</a>
+    </div>
+{% endblock %}
