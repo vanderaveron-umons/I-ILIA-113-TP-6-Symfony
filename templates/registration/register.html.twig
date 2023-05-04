@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Enregistrement{% endblock %}
+
+{% block body %}
+    <div class="container-fluid">
+        <h1>Enregistrez-vous</h1>
+
+        {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email, {
+            label_attr: {'class': 'form-label'}
+        }) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Mot de passe',
+            label_attr: {'class': 'form-label'}
+        }) }}
+        {{ form_row(registrationForm.agreeTerms, {
+            label: 'Accepter les conditions d\'utilisation',
+            label_attr: {'class': 'form-label'}
+        }) }}
+
+        <button type="submit" class="btn btn-success">Register</button>
+        {{ form_end(registrationForm) }}
+    </div>
+{% endblock %}
