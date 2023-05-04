@@ -1,5 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-   Homepage
+   <div class="container-fluid d-flex flex-column justify-content-center align-items-center vh-100" id="container-principal">
+      <h1 class="text-center">Bonjour à tous et bienvenue sur notre site créé avec Symfony</h1>
+      <img src="{{ asset('welcome.jpg') }}" class="img-fluid img-thumbnail  shadow" alt="">
+
+   </div>
 {% endblock %}
