@@ -11,3 +11,8 @@ Les modifications apportées sont les suivantes :
 - Création de la page enregistrement en utilisant le module 'registration-form' et utilisation de Bootstrap
 
 ## Captures d'écran 
+![Home](screenshots/home.png "Homepage")
+![Lucky](screenshots/lucky.png "Lucky number")
+![Articles](screenshots/articles.png "Liste des articles")
+![Details](screenshots/details.png "Détails d'un article")
+![Register](screenshots/register.png "Enregistrement")
